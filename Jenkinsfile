@@ -33,7 +33,8 @@ pipeline{
             steps{
 		withKubeConfig([credentialsId: 'kubeconfig']) {
                 sh "sed -i 's#replace#rishabhrapatwar/nodeproject:${GIT_COMMIT}#g' deployment.yml"
-		sh 'kubectl apply -f deployment.yml' 
+		sh 'kubectl apply -f deployment.yml'
+		} 
             }
         }
     }
