@@ -9,7 +9,7 @@ pipeline{
 	stage('Unit tests'){
            steps{
               script{
-                sh 'npm test'
+                sh 'npm run test'
               }
            }
         }

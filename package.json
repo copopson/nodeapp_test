@@ -17,6 +17,7 @@
     "start": "node index.js",
     "test": "./node_modules/.bin/mocha ./test/test.js",
     "sonar": "node sonar-project.js",
+    "test": "mocha --recursive --exit",
     "owasp": "owasp-dependency-check --project \"node-app\" -f HTML JSON"
   }
 }
