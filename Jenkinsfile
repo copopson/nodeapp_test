@@ -6,6 +6,27 @@ pipeline{
   }
   agent any
     stages {
+	stage('Unit tests'){
+           steps{
+              script{
+                sh 'npm test'
+              }
+           }
+        }
+	stage('SonarQube-SAST'){
+           steps{
+              script{
+                sh 'npm run sonar'
+              }
+           }
+        }
+	stage('Mutation test-STRYKER'){
+           steps{
+              script{
+                sh 'npx stryker run'
+              }
+           }
+        }
 	stage ('Dependency-Check Analysis') {
     		steps {
         		sh '/var/lib/jenkins/dependency-check/bin/dependency-check.sh --scan `pwd` --format JSON --out /var/lib/jenkins/dependency-check/bin/reports/dependency-check-report --prettyPrint --disableYarnAudit'
