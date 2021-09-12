@@ -7,11 +7,13 @@
     "express": "4.17.1"
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^5.4.0",
     "mocha": "9.1.1",
     "supertest": "6.1.6"
   },
   "scripts": {
     "start": "node index.js",
-    "test": "./node_modules/.bin/mocha ./test/test.js"
+    "test": "./node_modules/.bin/mocha ./test/test.js",
+    "sonar": "node sonar-project.js"
   }
 }
