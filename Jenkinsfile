@@ -23,7 +23,7 @@ pipeline{
 	stage('Mutation test-STRYKER'){
            steps{
               script{
-                sh 'npx stryker run'
+                sh 'stryker run'
               }
            }
         }
