@@ -8,7 +8,7 @@ pipeline{
     stages {
 	stage ('Dependency-Check Analysis') {
     		steps {
-        		sh '/var/lib/jenkins/dependency-check/bin/dependency-check.sh --scan `pwd` --format JSON --out /var/lib/jenkins/dependency-check/bin/reports/dependency-check-report --prettyPrint'
+        		sh '/var/lib/jenkins/dependency-check/bin/dependency-check.sh --scan `pwd` --format JSON --out /var/lib/jenkins/dependency-check/bin/reports/dependency-check-report --prettyPrint --disableYarnAudit'
    		 }		
 	}
         stage('Build'){
