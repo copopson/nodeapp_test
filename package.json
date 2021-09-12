@@ -9,11 +9,14 @@
   "devDependencies": {
     "@stryker-mutator/core": "^5.4.0",
     "mocha": "9.1.1",
+    "owasp-dependency-check": "0.0.18",
+    "sonarqube-scanner": "^2.8.1",
     "supertest": "6.1.6"
   },
   "scripts": {
     "start": "node index.js",
     "test": "./node_modules/.bin/mocha ./test/test.js",
-    "sonar": "node sonar-project.js"
+    "sonar": "node sonar-project.js",
+    "owasp": "owasp-dependency-check --project \"node-app\" -f HTML JSON"
   }
 }

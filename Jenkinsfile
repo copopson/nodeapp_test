@@ -6,6 +6,11 @@ pipeline{
   }
   agent any
     stages {
+	stage ('Dependency-Check Analysis') {
+    		steps {
+        		sh '/var/lib/jenkins/dependency-check/bin/dependency-check.sh --scan `pwd` --format JSON --out /var/lib/jenkins/dependency-check/bin/reports/dependency-check-report --prettyPrint'
+   		 }		
+	}
         stage('Build'){
            steps{
               script{
