@@ -20,13 +20,13 @@ pipeline{
               }
            }
         }
-	stage('Mutation test-STRYKER'){
-           steps{
-              script{
-                sh 'stryker run'
-              }
-           }
-        }
+	//stage('Mutation test-STRYKER'){
+        //   steps{
+        //      script{
+        //        sh 'stryker run'
+        //      }
+        //   }
+        //}
 	stage ('Dependency-Check Analysis') {
     		steps {
         		sh '/var/lib/jenkins/dependency-check/bin/dependency-check.sh --scan `pwd` --format JSON --out /var/lib/jenkins/dependency-check/bin/reports/dependency-check-report --prettyPrint --disableYarnAudit'
